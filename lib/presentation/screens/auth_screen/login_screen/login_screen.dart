@@ -17,7 +17,9 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: MyColors.primaryColor,
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: NeverScrollableScrollPhysics(),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(
                 height: 50.h,
@@ -34,10 +36,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: MediaQuery.sizeOf(context).height,
                 width: MediaQuery.sizeOf(context).width,
                 decoration: const BoxDecoration(
-                    color: MyColors.whiteColor,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(36),
-                        topRight: Radius.circular(36))),
+                  color: Colors.white,
+                  //  borderRadius: BorderRadius.all(Radius.circular(36))
+
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(36),
+                      topRight: Radius.circular(36)),
+                ),
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24.w),
                   child: Column(
@@ -97,6 +102,50 @@ class _LoginScreenState extends State<LoginScreen> {
                           controller: passwordController,
                         ),
                       ),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: CheckboxListTile(
+                              contentPadding: EdgeInsets.zero,
+                              controlAffinity: ListTileControlAffinity.leading,
+                              value: false,
+                              onChanged: (val) {},
+                              title: const Text('Remember me'),
+                            ),
+                          ),
+                          const Text("Forgot Password?"),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      PrimaryButton(
+                        onPressed: () => AutoRouter.of(context)
+                            .pushAndPopUntil(const HomeScreenHelperRoute(),
+                                predicate: (Route<dynamic> route) {
+                          return route.settings.name == HomeScreenHelperRoute.name;
+                        }),
+                        text: 'Login',
+                      ),
+                      SizedBox(
+                        height: 40.h,
+                      ),
+                      // RichText(
+                      //   text: const TextSpan(
+                      //     text: 'Already have an account? ',
+                      //     style: TextStyle(color: MyColors.primaryColor),
+                      //     children: <TextSpan>[
+                      //       TextSpan(
+                      //         text: 'Login',
+                      //         style: TextStyle(fontWeight: FontWeight.w700),
+                      //       ),
+                      //     ],
+                      //   ),
+                      // )
                     ],
                   ),
                 ),
