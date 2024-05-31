@@ -82,7 +82,7 @@ class _LandingScreenState extends State<LandingScreen> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   "Here is Title of the  post that will be fetched from the api",
                                   maxLines: 2,
                                 ),
@@ -90,15 +90,15 @@ class _LandingScreenState extends State<LandingScreen> {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    Icon(FeatherIcons.clock),
+                                    const Icon(FeatherIcons.clock),
                                     SizedBox(
                                       width: 5.h,
                                     ),
-                                    Text("6 months ago"),
+                                    const Text("6 months ago"),
                                   ],
                                 ),
                                 SizedBox(height: 8.h),
-                                Row(
+                                const Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [

@@ -19,7 +19,7 @@ class AppRouter extends $AppRouter {
         AutoRoute(page: TagsScreenRoute.page),
         AutoRoute(page: AddPostsScreenRoute.page),
         AutoRoute(page: CategoriesScreenRoute.page),
-         AutoRoute(page: LandingSceenDetailsRoute.page),
+        AutoRoute(page: LandingSceenDetailsRoute.page),
 
       ];
 }

@@ -46,10 +46,10 @@ class OnBoard extends StatelessWidget {
                 SizedBox(
                   height: 60.h,
                 ),
-                PrimaryButton(text: "Get Started", onPressed: ()=>
-                   AutoRouter.of(context).push(const AuthScreenRoute())
-                ),
-                
+                PrimaryButton(
+                    text: "Get Started",
+                    onPressed: () =>
+                        AutoRouter.of(context).push(const AuthScreenRoute())),
                 SizedBox(
                   height: 60.h,
                 ),
@@ -57,7 +57,10 @@ class OnBoard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        TagsRepo().getAllTags();
+                        //   ApiClient().getRequest(path: ApiEndPointUrls.tags);
+                      },
                       child: Text(
                         "Skip",
                         style: TextStyle(
@@ -75,7 +78,15 @@ class OnBoard extends StatelessWidget {
                         controller: pageController,
                         count: 3),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        //   Map body = {
+                        //     "title": "Khana khau hai",
+                        //     "slug": "Khana-khau-maile-khaisakay"
+                        //   };
+                        //   ApiClient().postRequest(
+                        //       path: ApiEndPointUrls.addTags, body: body);
+                        //
+                      },
                       child: Text(
                         "Next",
                         style: TextStyle(

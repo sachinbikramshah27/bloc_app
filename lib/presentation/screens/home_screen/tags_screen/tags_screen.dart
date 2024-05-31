@@ -10,19 +10,27 @@ class TagsScreen extends StatefulWidget {
 
 class _TagsScreenState extends State<TagsScreen> {
   @override
+  void initState() {
+    TagsRepo().getAllTags();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: MyColors.primaryColor,
-        title: Text("Tags"),
-        actions: [IconButton(onPressed: () {}, icon: Icon(FeatherIcons.plus))],
+        title: const Text("Tags"),
+        actions: [
+          IconButton(onPressed: () {}, icon: const Icon(FeatherIcons.plus))
+        ],
       ),
       body: Column(
         children: [
           Expanded(
               child: ListView.separated(
             separatorBuilder: (context, index) {
-              return Divider(
+              return const Divider(
                 color: MyColors.primaryColor,
                 thickness: 1,
               );
@@ -31,15 +39,17 @@ class _TagsScreenState extends State<TagsScreen> {
             itemBuilder: (context, index) {
               return ListTile(
                 leading: Text("${index + 1}"),
-                title: Text("Add Tags"),
+                title: const Text("Add Tags"),
                 trailing: SizedBox(
                   width: 100.h,
                   child: Row(
                     children: [
                       IconButton(
-                          onPressed: () {}, icon: Icon(FeatherIcons.edit2)),
+                          onPressed: () {},
+                          icon: const Icon(FeatherIcons.edit2)),
                       IconButton(
-                          onPressed: () {}, icon: Icon(FeatherIcons.trash2))
+                          onPressed: () {},
+                          icon: const Icon(FeatherIcons.trash2))
                     ],
                   ),
                 ),

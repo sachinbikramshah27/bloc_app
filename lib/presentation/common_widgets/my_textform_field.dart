@@ -3,12 +3,14 @@ part of 'common_widgets_imports.dart';
 class MyTextFormField extends StatelessWidget {
   const MyTextFormField(
       {super.key,
+      this.hintText,
       required this.controller,
-      required this.prefixIcon,
+      this.prefixIcon,
       required this.obscureText});
   final TextEditingController controller;
-  final IconData prefixIcon;
+  final IconData? prefixIcon;
   final bool obscureText;
+  final String? hintText;
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +19,7 @@ class MyTextFormField extends StatelessWidget {
       cursorColor: MyColors.primaryColor,
       obscureText: obscureText,
       decoration: InputDecoration(
+        hintText: hintText,
         prefixIcon: Icon(prefixIcon),
 
         contentPadding: const EdgeInsets.symmetric(

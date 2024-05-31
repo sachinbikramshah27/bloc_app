@@ -17,7 +17,7 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: MyColors.primaryColor,
       body: SafeArea(
         child: SingleChildScrollView(
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -76,6 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(
                         height: 50.h,
                         child: MyTextFormField(
+                          hintText: 'Email',
                           obscureText: false,
                           controller: emailController,
                           prefixIcon: Icons.email_outlined,
@@ -97,6 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(
                         height: 50.h,
                         child: MyTextFormField(
+                          hintText: 'Password',
                           obscureText: true,
                           prefixIcon: Icons.lock,
                           controller: passwordController,
@@ -127,7 +129,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         onPressed: () => AutoRouter.of(context)
                             .pushAndPopUntil(const HomeScreenHelperRoute(),
                                 predicate: (Route<dynamic> route) {
-                          return route.settings.name == HomeScreenHelperRoute.name;
+                          return route.settings.name ==
+                              HomeScreenHelperRoute.name;
                         }),
                         text: 'Login',
                       ),

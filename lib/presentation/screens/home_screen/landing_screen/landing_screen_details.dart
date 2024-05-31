@@ -13,7 +13,7 @@ class _LandingSceenDetailsState extends State<LandingSceenDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             "Title is here,and there and chills",
             overflow: TextOverflow.ellipsis,
           ),
@@ -48,11 +48,11 @@ class _LandingSceenDetailsState extends State<LandingSceenDetails> {
                 children: [
                   Row(
                     children: [
-                      Icon(FeatherIcons.eye),
+                      const Icon(FeatherIcons.eye),
                       SizedBox(
                         width: 6.w,
                       ),
-                      Text("69 views")
+                      const Text("69 views")
                     ],
                   ),
                   Row(
@@ -61,16 +61,16 @@ class _LandingSceenDetailsState extends State<LandingSceenDetails> {
                         children: [
                           IconButton(
                               onPressed: () {},
-                              icon: Icon(FeatherIcons.thumbsUp)),
-                          Text("0")
+                              icon: const Icon(FeatherIcons.thumbsUp)),
+                          const Text("0")
                         ],
                       ),
                       Row(
                         children: [
                           IconButton(
                               onPressed: () {},
-                              icon: Icon(FeatherIcons.thumbsDown)),
-                          Text("0")
+                              icon: const Icon(FeatherIcons.thumbsDown)),
+                          const Text("0")
                         ],
                       ),
                     ],
@@ -80,7 +80,7 @@ class _LandingSceenDetailsState extends State<LandingSceenDetails> {
               SizedBox(
                 height: 10.h,
               ),
-              Text(
+              const Text(
                   "Title is here,and there and chills Title is here,and there and chills Title is here,and there and chills Title is here,and there and chills Title is here,and there and chillsTitle is here,and there and chills Title is here,and there and chillsTitle is here,and there and chills Title is here,and there and chills Title is here,and there and chills Title is here,and there and chills Title is here,and there and chills Title is here,and there and chillsTitle is here,and there and chills Title is here,and there and chillsTitle is here,and there and chills Title is here,and there and chills Title is here,and there and chills Title is here,and there and chills Title is here,and there and chills Title is here,and there and chillsTitle is here,and there and chills Title is here,and there and chillsTitle is here,and there and chills Title is here,and there and chills Title is here,and there and chills Title is here,and there and chills Title is here,and there and chills Title is here,and there and chillsTitle is here,and there and chills Title is here,and there and chillsTitle is here,and there and chills")
             ],
           ),
